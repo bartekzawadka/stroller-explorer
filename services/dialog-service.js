@@ -18,7 +18,7 @@ angular.module('strollerExplorer').factory('DialogService', function($mdDialog){
                onComplete: callback
            });
        },
-       showLoader: function(ev, message, callback){
+       showLoader: function(ev){
            $mdDialog.show({
                controller: function($scope, data){
                    $scope.message = data.message;
@@ -27,15 +27,17 @@ angular.module('strollerExplorer').factory('DialogService', function($mdDialog){
                parent: angular.element(document.body),
                targetEvent: ev,
                clickOutsideToClose: false,
-               fullscreen: true,
+               fullscreen: false,
                locals: {
                    data: {
-                       message: message
+                       message: "Loading data, please wait..."
                    }
-               },
-               onComplete: callback
+               }
            });
 
+       },
+       closeDialog: function(){
+           $mdDialog.cancel();
        }
    }
 }).controller('DialogCtrl', function($scope, $mdDialog, data){

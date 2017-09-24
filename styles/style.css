@@ -26,6 +26,11 @@
     }
 }
 
+md-dialog.loader-dialog {
+    width: 400px !important;
+    min-width: unset !important;
+}
+
 div.header-buttons {
     float: right;
     margin-top: 15px;
@@ -51,13 +56,17 @@ md-toolbar.error-info {
 }
 
 img.list-item-thumbnail {
+    /*width: 100% !important;*/
+    /*max-height: 60px !important;*/
+    /*height: 100% !important;*/
+    /*-webkit-border-radius: 0 !important;*/
+    /*-moz-border-radius: 0 !important;*/
+    /*border-radius: 0 !important;*/
+    /*max-width: 100px !important;*/
+
     width: 100% !important;
-    max-height: 60px !important;
     height: 100% !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
     border-radius: 0 !important;
-    max-width: 100px !important;
 }
 
 image-viewer {
