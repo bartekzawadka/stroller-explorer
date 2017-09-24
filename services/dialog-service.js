@@ -7,7 +7,7 @@ angular.module('strollerExplorer').factory('DialogService', function($mdDialog){
                parent: angular.element(document.body),
                targetEvent: ev,
                clickOutsideToClose: false,
-               fullscreen: true,
+               fullscreen: false,
                locals: {
                    data: {
                        title: title,
