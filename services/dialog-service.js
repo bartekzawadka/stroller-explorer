@@ -36,6 +36,22 @@ angular.module('strollerExplorer').factory('DialogService', function($mdDialog){
            });
 
        },
+       showConfirm: function(ev, title, message,
+                             confirmButtonText, rejectButtonText,
+                             confirmedCallback, rejectedCallback){
+           if(!confirmButtonText)
+               confirmButtonText = "OK";
+           if(!rejectButtonText)
+               rejectButtonText = "Cancel";
+           var confirmDialog = $mdDialog.confirm()
+               .title(title)
+               .textContent(message)
+               .targetEvent(ev)
+               .ok(confirmButtonText)
+               .cancel(rejectButtonText);
+
+           $mdDialog.show(confirmDialog).then(confirmedCallback, rejectedCallback);
+       },
        closeDialog: function(){
            $mdDialog.cancel();
        }
