@@ -52,6 +52,25 @@ angular.module('strollerExplorer').factory('DialogService', function($mdDialog){
 
            $mdDialog.show(confirmDialog).then(confirmedCallback, rejectedCallback);
        },
+       showPrompt: function(ev, title, message, confirmButtonText, rejectButtonText,
+                               confirmedCallback, rejectedCallback){
+           if(!confirmButtonText)
+               confirmButtonText = "OK";
+           if(!rejectButtonText)
+               rejectButtonText = "Cancel";
+           var confirmDialog = $mdDialog.prompt()
+               .title(title)
+               .textContent(message)
+               .placeholder('File name')
+               .ariaLabel('File name')
+               .initialValue('Image')
+               .required(true)
+               .targetEvent(ev)
+               .ok(confirmButtonText)
+               .cancel(rejectButtonText);
+
+           $mdDialog.show(confirmDialog).then(confirmedCallback, rejectedCallback);
+       },
        closeDialog: function(){
            $mdDialog.cancel();
        }

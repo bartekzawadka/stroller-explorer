@@ -4,7 +4,7 @@ angular.module('strollerExplorer', [
     'strollerExplorer.imagesList',
     'strollerExplorer.imagePreview',
     'ngMaterial', 'ngRoute', 'ngMessages',
-    'angular-loading-bar'
+    'angular-loading-bar', 'ngFileSaver'
 ]).config(['$locationProvider', '$routeProvider','cfpLoadingBarProvider',
     function($locationProvider, $routeProvider, cfpLoadingBarProvider){
     $locationProvider.html5Mode(false);

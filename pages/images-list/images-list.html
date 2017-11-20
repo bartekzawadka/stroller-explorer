@@ -18,6 +18,9 @@
                 <md-grid-tile-footer>
                     <div layout="row" layout-padding layout-align="center center">
                         <h3 flex>{{image.createdAt | date: "yyyy-MM-dd HH:mm:ss"}}</h3>
+                        <md-button class="md-fab md-mini micro transparent" ng-click="downloadImage(image._id)">
+                            <md-icon md-font-library="material-icons">file_download</md-icon>
+                        </md-button>
                         <md-button class="md-fab md-mini micro transparent" ng-click="deleteImage(image._id)">
                             <md-icon md-font-library="material-icons">close</md-icon>
                         </md-button>
