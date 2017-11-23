@@ -72,7 +72,7 @@ angular.module('strollerExplorer.imagesList', ['ngRoute'])
                             fName = cdSplits[1];
                         }
 
-                        var blob = new Blob([result.data], { type: contentType });
+                        var blob = new Blob([JSON.stringify(result.data)], { type: contentType });
                         FileSaver.saveAs(blob, fName);
                         },
                         function(e){
